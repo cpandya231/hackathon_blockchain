@@ -19,7 +19,7 @@ App = {
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       web3 = new Web3(App.web3Provider);
     }
-    return App.initContract();
+    return App.render();
   },
 
   initContract: function () {
@@ -34,7 +34,7 @@ App = {
   },
   listenForEvents: function () {
     App.contracts.Consumer.deployed().then(function (i) {
-      i.VoteEvent({}, { fromBlock: 0, toBlock: 'latest' }).watch(function (error, event) {
+      i.ClaimEvent({}, { fromBlock: 0, toBlock: 'latest' }).watch(function (error, event) {
         console.log("Event triggered", event);
         App.render();
       });
@@ -45,8 +45,8 @@ App = {
     var loader = $("#loader");
     var content = $("#content");
 
-    loader.show();
-    content.hide();
+    loader.hide();
+    content.show();
     
     // Load account data
     web3.eth.getCoinbase(function (err, account) {
@@ -57,55 +57,21 @@ App = {
     });
 
     // Load contract data
-    App.contracts.Election.deployed().then(function (instance) {
-      electionInstance = instance;
-      return electionInstance.candidateCount();
-    }).then(function (candidateCount) {
-      var candidatesResults = $("#candidatesResults");
-      candidatesResults.empty();
-      var candidatesSelect = $('#candidatesSelect');
-      candidatesSelect.empty();
-
-      for (var i = 1; i <= candidateCount; i++) {
-        electionInstance.candidates(i).then(function (candidate) {
-          var id = candidate[0];
-          var name = candidate[1];
-          var voteCount = candidate[2];
-
-          // Render candidate Result
-          var candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
-          candidatesResults.append(candidateTemplate);
-          // Render candidate ballot option
-          var candidateOption = "<option value='" + id + "' >" + name + "</ option>"
-          candidatesSelect.append(candidateOption);
-        });
-      }
-      return electionInstance.voters(App.account);
-    }).then(function (hasVoted) {
-      // Do not allow a user to vote
-      if (hasVoted) {
-        $('form').hide();
-      }
-
-      loader.hide();
-      content.show();
-    }).catch(function (error) {
-      console.warn(error);
-    });
+    
   },
   submitClaim: function () {
     var resourceLink = $('#resourceUrl').val();
     var amount = $('#amount').val();
     var duration = $('#duration').val();
-    App.contracts.Election.deployed().then(function (instance) {
-      return instance.vote(candidateId, { from: App.account });
-    }).then(function (result) {
-      // Wait for votes to update
-      $("#content").hide();
-      $("#loader").show();
-    }).catch(function (err) {
-      console.error(err);
-    });
+    var Migrations = artifacts.require("./Consumer.sol");
+
+    module.exports = function(deployer) {
+    deployer.deploy(Migrations);
+    
+    };
+    console.log("Contract Deployed Successfully!");
+    App.initContract();
+
   }
 };
 
