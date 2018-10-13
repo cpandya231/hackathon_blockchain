@@ -3,6 +3,7 @@ App = {
   contracts: {},
   account: '0x0',
   hasVoted: false,
+  balance:null,
 
   init: function () {
     return App.initWeb3();
@@ -19,7 +20,7 @@ App = {
       App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
       web3 = new Web3(App.web3Provider);
     }
-    return App.render();
+    return App.initContract();
   },
 
   initContract: function () {
@@ -28,6 +29,7 @@ App = {
       App.contracts.Consumer = TruffleContract(consumer);
       // Connect provider to interact with contract
       App.contracts.Consumer.setProvider(App.web3Provider);
+      console.log(App.contracts.Consumer);
       App.listenForEvents();
       return App.render();
     });
@@ -44,33 +46,57 @@ App = {
     var electionInstance;
     var loader = $("#loader");
     var content = $("#content");
-
+    var localAct;
     loader.hide();
     content.show();
-    
+
     // Load account data
     web3.eth.getCoinbase(function (err, account) {
       if (err === null) {
         App.account = account;
-        $("#accountAddress").html("Your Account: " + account);
+        localAct=account;
+        $("#accountAddress").html("Your Account: " + localAct);
+        web3.eth.getBalance(localAct, (err, wei) => {
+          balance = wei / 10 ** 18;
+          $("#accountBalance").html("Your Account Balance: " + balance);
+        });
       }
     });
 
-    // Load contract data
     
+   
+
   },
   submitClaim: function () {
+    //Getting Claim information
+
+    
+    
+
     var resourceLink = $('#resourceUrl').val();
     var amount = $('#amount').val();
     var duration = $('#duration').val();
-    var Migrations = artifacts.require("./Consumer.sol");
+    var instance;
 
-    module.exports = function(deployer) {
-    deployer.deploy(Migrations);
-    
-    };
-    console.log("Contract Deployed Successfully!");
-    App.initContract();
+    var claimNo = null;
+    if (balance > amount) {
+      App.contracts.Consumer.deployed().then(function (i) {
+        instance = i;
+        instance.createClaim(resourceLink, amount, duration, App.account, { from: App.account }).then((error, result) => {
+          claimNo = result;
+        });
+        return instance.claimCount();
+
+      }).then(function (claimCount) {
+        console.log("Contract Deployed Successfully! Claim Number=" + claimCount);
+        $("#claimMessage").html("Contract Deployed Successfully! Claim Number= " + claimCount);
+      });
+    } else {
+      $("#claimMessage").html("Insufficient Balance");
+    }
+
+
+
 
   }
 };
