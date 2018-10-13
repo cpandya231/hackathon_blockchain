@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html ng-app="my-app">
+  <head>
+    <link rel="stylesheet" href="src/css/popup.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="src/js/lib/angular.min.js"></script>
+
+    <!-- App's Custom code -->
+    
+    <style>
+        .funkyradio div {
+  clear: both;
+  overflow: hidden;
+}
+
+.funkyradio label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+}
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+  display: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label,
+.funkyradio input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before,
+.funkyradio input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked ~ label,
+.funkyradio input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before,
+.funkyradio input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus ~ label:before,
+.funkyradio input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-default input[type="radio"]:checked ~ label:before,
+.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio-primary input[type="radio"]:checked ~ label:before,
+.funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.funkyradio-success input[type="radio"]:checked ~ label:before,
+.funkyradio-success input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.funkyradio-danger input[type="radio"]:checked ~ label:before,
+.funkyradio-danger input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+.funkyradio-warning input[type="radio"]:checked ~ label:before,
+.funkyradio-warning input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+.funkyradio-info input[type="radio"]:checked ~ label:before,
+.funkyradio-info input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5bc0de;
+}
+
+a {
+    background-color: red;
+  box-shadow: 0 5px 0 darkred;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: #ce0606;
+  cursor: pointer;
+}
+.linkClass a{
+  display: block;
+}
+</style>
+        
+       
+        
+  </head>
+  <body>
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <!------ Include the above in your HEAD tag ---------->
+      
+      <div class="container">
+        
+      <div class="linkClass";>
+        
+          <a  href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+        
+            <a  href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+        </div>
+      
+        <div class="row">
+            <br/>
+              <div class="panel panel-primary">
+                   <div class="panel-heading">                  
+                        <pre>
+                            Q1. What does P2P stand for?                     
+                        </pre>
+                   </div><!--.panel-heading-->
+              
+      <div class = "panel-body">
+            <h4>Your Answer</h4>
+                 </div>
+      <ul class = "list-group">
+          <li class = "list-group-item">
+                <div class="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <label for="checkbox">
+                      A. Password to Password
+                  </label>
+              </div>
+          </li>
+          <li class = "list-group-item">
+                <div class="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <label for="checkbox">
+                      B. Peer to Peer
+                  </label>
+              </div>
+          </li>
+          <li class = "list-group-item">
+                <div class="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <label for="checkbox">
+                      C. Private Key to Public Key
+                  </label>
+              </div>
+          </li>
+          <li class = "list-group-item">
+                <div class="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <label for="checkbox">
+                      D. Product to Product
+                  </label>
+              </div>
+          </li>
+         </ul>
+              </div>
+              <div class="panel panel-primary">
+                  <div class="panel-heading">                  
+                       <pre>
+                          Q2. What is a node?                     
+                       </pre>
+                  </div><!--.panel-heading-->
+             
+     <div class = "panel-body">
+           <h4>Your Answer</h4>
+                </div>
+     <ul class = "list-group">
+         <li class = "list-group-item">
+               <div class="checkbox">
+                 <input type="checkbox" id="checkbox" />
+                 <label for="checkbox">
+                A. Type of cryptocurrency
+                 </label>
+             </div>
+         </li>
+         <li class = "list-group-item">
+               <div class="checkbox">
+                 <input type="checkbox" id="checkbox" />
+                 <label for="checkbox">
+                   B. A Blockchain
+                 </label>
+             </div>
+         </li>
+         <li class = "list-group-item">
+               <div class="checkbox">
+                 <input type="checkbox" id="checkbox" />
+                 <label for="checkbox">
+                    C. A computer on a Blockchain network
+                 </label>
+             </div>
+         </li>
+         <li class = "list-group-item">
+               <div class="checkbox">
+                 <input type="checkbox" id="checkbox" />
+                 <label for="checkbox">
+                    D. An exchange
+                 </label>
+             </div>
+         </li>
+        </ul>
+             </div>
+             <div class="panel panel-primary">
+                <div class="panel-heading">                  
+                     <pre>
+                        Q3. Who created Bitcoin?                
+                     </pre>
+                </div><!--.panel-heading-->
+           
+   <div class = "panel-body">
+         <h4>Your Answer</h4>
+              </div>
+   <ul class = "list-group">
+       <li class = "list-group-item">
+             <div class="checkbox">
+               <input type="checkbox" id="checkbox" />
+               <label for="checkbox">
+                  A. Satoshi Nakamoto
+               </label>
+           </div>
+       </li>
+       <li class = "list-group-item">
+             <div class="checkbox">
+               <input type="checkbox" id="checkbox" />
+               <label for="checkbox">
+                  B. Samsung
+               </label>
+           </div>
+       </li>
+       <li class = "list-group-item">
+             <div class="checkbox">
+               <input type="checkbox" id="checkbox" />
+               <label for="checkbox">
+                  C. John Mcafee
+               </label>
+           </div>
+       </li>
+       <li class = "list-group-item">
+             <div class="checkbox">
+               <input type="checkbox" id="checkbox" />
+               <label for="checkbox">
+                  D. China
+               </label>
+           </div>
+       </li>
+      </ul>
+           </div>
+           <div class="panel panel-primary">
+              <div class="panel-heading">                  
+                   <pre>
+                      Q4. Where do you store your cryptocurrency?                
+                   </pre>
+              </div><!--.panel-heading-->
+         
+ <div class = "panel-body">
+       <h4>Your Answer</h4>
+            </div>
+ <ul class = "list-group">
+     <li class = "list-group-item">
+           <div class="checkbox">
+             <input type="checkbox" id="checkbox" />
+             <label for="checkbox">
+                A. Bank account
+             </label>
+         </div>
+     </li>
+     <li class = "list-group-item">
+           <div class="checkbox">
+             <input type="checkbox" id="checkbox" />
+             <label for="checkbox">
+                B. Floppy Disk
+             </label>
+         </div>
+     </li>
+     <li class = "list-group-item">
+           <div class="checkbox">
+             <input type="checkbox" id="checkbox" />
+             <label for="checkbox">
+                C. Wallet
+             </label>
+         </div>
+     </li>
+     <li class = "list-group-item">
+           <div class="checkbox">
+             <input type="checkbox" id="checkbox" />
+             <label for="checkbox">
+                D. In your pocket
+             </label>
+         </div>
+     </li>
+    </ul>
+         </div>
+      </div>
+      </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
