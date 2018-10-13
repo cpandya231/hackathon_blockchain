@@ -1,63 +1,46 @@
 <!DOCTYPE html>
-<html ng-app="my-app">
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="src/css/popup.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="src/js/lib/angular.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Election Results</title>
 
-    <!-- App's Custom code -->
-    <script src="src/js/app/popup.js"></script>
-    <style>
-        .form-group {
-          margin-left: 20%;
-          margin-right: 20%;
-        }
-        .buttonBoth {
-          margin-left: 20%;
-          margin-right: 20%;
-        }
-        
-        .amount {margin-left: 37px;}
-        .duration {margin-left: 72px; }
-        
-        </style>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
   </head>
   <body>
     <div class="container" style="width: 650px;">
       <div class="row">
         <div class="col-lg-12">
-          <div class="text-center"><img src="assets/icons/main.jpg"></img></div>
+          <h1 class="text-center">Stop Faking It</h1>
           <hr/>
           <br/>
           <div id="loader">
             <p class="text-center">Loading...</p>
           </div>
           <div id="content" style="display: none;">
-            <hr/>
             
+            <hr/>
             <p id="claimMessage" class="text-center"></p>
-            <form >
+            <form onSubmit="App.submitClaim(); return false;">
               <div class="form-group">
-               <div> 
-                 <label for="resourceUrl">Provide Link to resource:</label>
+                <label for="resourceUrl">Provide Link to resource</label>
                 <input type="text" name="resourceUrl" id="resourceUrl"/>
-                </div>
-                <div>
-                  <br>
-                <label for="amount">Amout to be spend:</label>
-                <input type="text" class="amount" name="amount" id="amount"/>
-                </div>
-                <div>
-                    <br>
-                <label for="duration">Time(in days):</label>
-                <input type="text" class="duration" name="duration" id="duration"/>
-                </div>
-                <br>
+                <span style="background-color: red"> <label for="amount">Amout to be spend</label></span>
+                <input type="text" name="amount" id="amount"/>
+                <label for="duration">Time(in days)</label>
+                <input type="text" name="duration" id="duration"/>
               </div>
-              <div class="buttonBoth">
               <button type="submit" class="btn btn-primary">Identify Fakeness</button>
-              <button type="submit" class="btn btn-primary">View Claims</button>
-              </div>
               <hr />
             </form>
             <p id="accountAddress" class="text-center"></p>
