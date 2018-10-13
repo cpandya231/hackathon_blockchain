@@ -4,7 +4,26 @@
     {
       "constant": true,
       "inputs": [],
-      "name": "claim",
+      "name": "claimCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "claims",
       "outputs": [
         {
           "name": "resourceLink",
@@ -17,20 +36,10 @@
         {
           "name": "waitTime",
           "type": "uint256"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [],
-      "name": "claimNo",
-      "outputs": [
+        },
         {
-          "name": "",
-          "type": "uint256"
+          "name": "consumerAddress",
+          "type": "address"
         }
       ],
       "payable": false,
@@ -69,29 +78,38 @@
         {
           "name": "_waitTime",
           "type": "uint256"
+        },
+        {
+          "name": "_consumerAddress",
+          "type": "address"
         }
       ],
       "name": "createClaim",
-      "outputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506103a6806100206000396000f300608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634e71d92d1461005c5780639cbbe2bc146100fa578063e0f958a714610125575b600080fd5b34801561006857600080fd5b506100716101a2565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156100bd5780820151818401526020810190506100a2565b50505050905090810190601f1680156100ea5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561010657600080fd5b5061010f610252565b6040518082815260200191505060405180910390f35b34801561013157600080fd5b506101a0600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192908035906020019092919080359060200190929190505050610258565b005b6000806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561023c5780601f106102115761010080835404028352916020019161023c565b820191906000526020600020905b81548152906001019060200180831161021f57829003601f168201915b5050505050908060010154908060020154905083565b60035481565b600360008154809291906001019190505550826000800190805190602001906102829291906102d5565b5081600060010181905550806000600201819055507f79c46aa1e9414f1ec17fe2ddf0a792ed052464f117504d03be80e05734ce37c86003546040518082815260200191505060405180910390a1505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031657805160ff1916838001178555610344565b82800160010185558215610344579182015b82811115610343578251825591602001919060010190610328565b5b5090506103519190610355565b5090565b61037791905b8082111561037357600081600090555060010161035b565b5090565b905600a165627a7a72305820a8924f4f161619274ebd765d86a9067c2357aef439eee42ebaa87c8f1774b9d80029",
-  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634e71d92d1461005c5780639cbbe2bc146100fa578063e0f958a714610125575b600080fd5b34801561006857600080fd5b506100716101a2565b6040518080602001848152602001838152602001828103825285818151815260200191508051906020019080838360005b838110156100bd5780820151818401526020810190506100a2565b50505050905090810190601f1680156100ea5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561010657600080fd5b5061010f610252565b6040518082815260200191505060405180910390f35b34801561013157600080fd5b506101a0600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192908035906020019092919080359060200190929190505050610258565b005b6000806000018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561023c5780601f106102115761010080835404028352916020019161023c565b820191906000526020600020905b81548152906001019060200180831161021f57829003601f168201915b5050505050908060010154908060020154905083565b60035481565b600360008154809291906001019190505550826000800190805190602001906102829291906102d5565b5081600060010181905550806000600201819055507f79c46aa1e9414f1ec17fe2ddf0a792ed052464f117504d03be80e05734ce37c86003546040518082815260200191505060405180910390a1505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031657805160ff1916838001178555610344565b82800160010185558215610344579182015b82811115610343578251825591602001919060010190610328565b5b5090506103519190610355565b5090565b61037791905b8082111561037357600081600090555060010161035b565b5090565b905600a165627a7a72305820a8924f4f161619274ebd765d86a9067c2357aef439eee42ebaa87c8f1774b9d80029",
-  "sourceMap": "27:563:0:-;;;276:39;8:9:-1;5:2;;;30:1;27;20:12;5:2;276:39:0;27:563;;;;;;",
-  "deployedSourceMap": "27:563:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;175:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;175:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;175:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;200:22;;8:9:-1;5:2;;;30:1;27;20:12;5:2;200:22:0;;;;;;;;;;;;;;;;;;;;;;;327:260;;8:9:-1;5:2;;;30:1;27;20:12;5:2;327:260:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;175:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;200:22::-;;;;:::o;327:260::-;420:7;;:9;;;;;;;;;;;;;460:13;440:5;:18;;:33;;;;;;;;;;;;:::i;:::-;;502:12;484:5;:17;;:30;;;;540:9;525:5;:14;;:24;;;;560:19;571:7;;560:19;;;;;;;;;;;;;;;;;;327:260;;;:::o;27:563::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.4.2;\r\n\r\ncontract Consumer {\r\n    struct Claim {\r\n        string resourceLink;\r\n        int256 priceAmount;\r\n        uint256 waitTime;\r\n        \r\n    }\r\n    Claim public claim;\r\n    uint256 public claimNo;\r\n    \r\n    event ClaimEvent(uint256 _claimNo);\r\n    constructor() public {\r\n        \r\n    }\r\n    \r\n    function createClaim (string _resourceLink,int256 _priceAmount, uint256 _waitTime){\r\n        claimNo++;\r\n        claim.resourceLink =_resourceLink;\r\n        claim.priceAmount=_priceAmount;\r\n        claim.waitTime=_waitTime;\r\n        ClaimEvent(claimNo);\r\n    }\r\n}",
+  "bytecode": "0x608060405234801561001057600080fd5b506104f2806100206000396000f300608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063329ed8131461005c5780638da4d3c91461010d578063a888c2cd14610138575b600080fd5b34801561006857600080fd5b506100f7600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192908035906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061021f565b6040518082815260200191505060405180910390f35b34801561011957600080fd5b50610122610333565b6040518082815260200191505060405180910390f35b34801561014457600080fd5b5061016360048036038101908080359060200190929190505050610339565b60405180806020018581526020018481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828103825286818151815260200191508051906020019080838360005b838110156101e15780820151818401526020810190506101c6565b50505050905090810190601f16801561020e5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b6000600160008154809291906001019190505550846000806001548152602001908152602001600020600001908051906020019061025e929190610421565b50836000806001548152602001908152602001600020600101819055508260008060015481526020019081526020016000206002018190555081600080600154815260200190815260200160002060030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f79c46aa1e9414f1ec17fe2ddf0a792ed052464f117504d03be80e05734ce37c86001546040518082815260200191505060405180910390a16001549050949350505050565b60015481565b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103e55780601f106103ba576101008083540402835291602001916103e5565b820191906000526020600020905b8154815290600101906020018083116103c857829003601f168201915b5050505050908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061046257805160ff1916838001178555610490565b82800160010185558215610490579182015b8281111561048f578251825591602001919060010190610474565b5b50905061049d91906104a1565b5090565b6104c391905b808211156104bf5760008160009055506001016104a7565b5090565b905600a165627a7a723058208ff05eff5a83927585b07f21b7e718e94ee89e688df568819be1efccd225046a0029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063329ed8131461005c5780638da4d3c91461010d578063a888c2cd14610138575b600080fd5b34801561006857600080fd5b506100f7600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192908035906020019092919080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061021f565b6040518082815260200191505060405180910390f35b34801561011957600080fd5b50610122610333565b6040518082815260200191505060405180910390f35b34801561014457600080fd5b5061016360048036038101908080359060200190929190505050610339565b60405180806020018581526020018481526020018373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001828103825286818151815260200191508051906020019080838360005b838110156101e15780820151818401526020810190506101c6565b50505050905090810190601f16801561020e5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b6000600160008154809291906001019190505550846000806001548152602001908152602001600020600001908051906020019061025e929190610421565b50836000806001548152602001908152602001600020600101819055508260008060015481526020019081526020016000206002018190555081600080600154815260200190815260200160002060030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055507f79c46aa1e9414f1ec17fe2ddf0a792ed052464f117504d03be80e05734ce37c86001546040518082815260200191505060405180910390a16001549050949350505050565b60015481565b6000602052806000526040600020600091509050806000018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103e55780601f106103ba576101008083540402835291602001916103e5565b820191906000526020600020905b8154815290600101906020018083116103c857829003601f168201915b5050505050908060010154908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905084565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061046257805160ff1916838001178555610490565b82800160010185558215610490579182015b8281111561048f578251825591602001919060010190610474565b5b50905061049d91906104a1565b5090565b6104c391905b808211156104bf5760008160009055506001016104a7565b5090565b905600a165627a7a723058208ff05eff5a83927585b07f21b7e718e94ee89e688df568819be1efccd225046a0029",
+  "sourceMap": "27:794:0:-;;;324:38;8:9:-1;5:2;;;30:1;27;20:12;5:2;324:38:0;27:794;;;;;;",
+  "deployedSourceMap": "27:794:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;374:444;;8:9:-1;5:2;;;30:1;27;20:12;5:2;374:444:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;251:25;;8:9:-1;5:2;;;30:1;27;20:12;5:2;251:25:0;;;;;;;;;;;;;;;;;;;;;;;199:39;;8:9:-1;5:2;;;30:1;27;20:12;5:2;199:39:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;199:39:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;374:444;491:7;511:10;;:12;;;;;;;;;;;;;567:13;534:6;:18;541:10;;534:18;;;;;;;;;;;:31;;:46;;;;;;;;;;;;:::i;:::-;;622:12;591:6;:18;598:10;;591:18;;;;;;;;;;;:30;;:43;;;;673:9;645:6;:18;652:10;;645:18;;;;;;;;;;;:27;;:37;;;;728:16;693:6;:18;700:10;;693:18;;;;;;;;;;;:34;;;:51;;;;;;;;;;;;;;;;;;760:22;771:10;;760:22;;;;;;;;;;;;;;;;;;800:10;;793:17;;374:444;;;;;;:::o;251:25::-;;;;:::o;199:39::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;27:794::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.4.2;\r\n\r\ncontract Consumer {\r\n    struct Claim {\r\n        string resourceLink;\r\n        int256 priceAmount;\r\n        uint256 waitTime;\r\n        address consumerAddress;\r\n    }\r\n    mapping(uint256 => Claim) public claims;\r\n    \r\n    uint256 public claimCount;\r\n    event ClaimEvent(uint256 _claimNo);\r\n    constructor() public{\r\n        \r\n    }\r\n    \r\n    function createClaim (string _resourceLink,int256 _priceAmount, uint256 _waitTime,address _consumerAddress) returns (uint256) {\r\n        claimCount++;\r\n        claims[claimCount].resourceLink =_resourceLink;\r\n        claims[claimCount].priceAmount=_priceAmount;\r\n        claims[claimCount].waitTime=_waitTime;\r\n        claims[claimCount].consumerAddress=_consumerAddress;\r\n        emit ClaimEvent(claimCount);\r\n        return claimCount;\r\n    }\r\n}",
   "sourcePath": "E:\\BlockChain\\Hackathon\\stopFakingIt\\contracts\\Consumer.sol",
   "ast": {
     "absolutePath": "/E/BlockChain/Hackathon/stopFakingIt/contracts/Consumer.sol",
     "exportedSymbols": {
       "Consumer": [
-        56
+        76
       ]
     },
-    "id": 57,
+    "id": 77,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -111,23 +129,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 56,
+        "id": 76,
         "linearizedBaseContracts": [
-          56
+          76
         ],
         "name": "Consumer",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Consumer.Claim",
-            "id": 8,
+            "id": 10,
             "members": [
               {
                 "constant": false,
                 "id": 3,
                 "name": "resourceLink",
                 "nodeType": "VariableDeclaration",
-                "scope": 8,
+                "scope": 10,
                 "src": "76:19:0",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -153,7 +171,7 @@
                 "id": 5,
                 "name": "priceAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 8,
+                "scope": 10,
                 "src": "106:18:0",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -179,7 +197,7 @@
                 "id": 7,
                 "name": "waitTime",
                 "nodeType": "VariableDeclaration",
-                "scope": 8,
+                "scope": 10,
                 "src": "135:16:0",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -199,37 +217,82 @@
                 },
                 "value": null,
                 "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9,
+                "name": "consumerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "162:23:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "162:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
               }
             ],
             "name": "Claim",
             "nodeType": "StructDefinition",
-            "scope": 56,
-            "src": "52:117:0",
+            "scope": 76,
+            "src": "52:141:0",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 10,
-            "name": "claim",
+            "id": 14,
+            "name": "claims",
             "nodeType": "VariableDeclaration",
-            "scope": 56,
-            "src": "175:18:0",
+            "scope": 76,
+            "src": "199:39:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Claim_$8_storage",
-              "typeString": "struct Consumer.Claim"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+              "typeString": "mapping(uint256 => struct Consumer.Claim)"
             },
             "typeName": {
-              "contractScope": null,
-              "id": 9,
-              "name": "Claim",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 8,
-              "src": "175:5:0",
+              "id": 13,
+              "keyType": {
+                "id": 11,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "207:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "199:25:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Claim_$8_storage_ptr",
-                "typeString": "struct Consumer.Claim"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                "typeString": "mapping(uint256 => struct Consumer.Claim)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 12,
+                "name": "Claim",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 10,
+                "src": "218:5:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Claim_$10_storage_ptr",
+                  "typeString": "struct Consumer.Claim"
+                }
               }
             },
             "value": null,
@@ -237,11 +300,11 @@
           },
           {
             "constant": false,
-            "id": 12,
-            "name": "claimNo",
+            "id": 16,
+            "name": "claimCount",
             "nodeType": "VariableDeclaration",
-            "scope": 56,
-            "src": "200:22:0",
+            "scope": 76,
+            "src": "251:25:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -249,10 +312,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 11,
+              "id": 15,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "200:7:0",
+              "src": "251:7:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -264,21 +327,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 16,
+            "id": 20,
             "name": "ClaimEvent",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 15,
+              "id": 19,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14,
+                  "id": 18,
                   "indexed": false,
                   "name": "_claimNo",
                   "nodeType": "VariableDeclaration",
-                  "scope": 16,
-                  "src": "252:16:0",
+                  "scope": 20,
+                  "src": "300:16:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -286,10 +349,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 13,
+                    "id": 17,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "252:7:0",
+                    "src": "300:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -299,19 +362,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "251:18:0"
+              "src": "299:18:0"
             },
-            "src": "235:35:0"
+            "src": "283:35:0"
           },
           {
             "body": {
-              "id": 19,
+              "id": 23,
               "nodeType": "Block",
-              "src": "297:18:0",
+              "src": "344:18:0",
               "statements": []
             },
             "documentation": null,
-            "id": 20,
+            "id": 24,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -319,34 +382,34 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17,
+              "id": 21,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "287:2:0"
+              "src": "335:2:0"
             },
             "payable": false,
             "returnParameters": {
-              "id": 18,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "297:0:0"
+              "src": "344:0:0"
             },
-            "scope": 56,
-            "src": "276:39:0",
+            "scope": 76,
+            "src": "324:38:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 54,
+              "id": 74,
               "nodeType": "Block",
-              "src": "409:178:0",
+              "src": "500:318:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 30,
+                    "id": 38,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -354,15 +417,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "420:9:0",
+                    "src": "511:12:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 29,
-                      "name": "claimNo",
+                      "id": 37,
+                      "name": "claimCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12,
-                      "src": "420:7:0",
+                      "referencedDeclaration": 16,
+                      "src": "511:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -373,14 +436,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 31,
+                  "id": 39,
                   "nodeType": "ExpressionStatement",
-                  "src": "420:9:0"
+                  "src": "511:12:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 36,
+                    "id": 45,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -389,18 +452,45 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 32,
-                        "name": "claim",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 10,
-                        "src": "440:5:0",
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 40,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "534:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 42,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 41,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "541:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "534:18:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Claim_$8_storage",
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
                           "typeString": "struct Consumer.Claim storage ref"
                         }
                       },
-                      "id": 34,
+                      "id": 43,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -408,7 +498,7 @@
                       "memberName": "resourceLink",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 3,
-                      "src": "440:18:0",
+                      "src": "534:31:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -418,31 +508,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 35,
+                      "id": 44,
                       "name": "_resourceLink",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 22,
-                      "src": "460:13:0",
+                      "referencedDeclaration": 26,
+                      "src": "567:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "440:33:0",
+                    "src": "534:46:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 37,
+                  "id": 46,
                   "nodeType": "ExpressionStatement",
-                  "src": "440:33:0"
+                  "src": "534:46:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 42,
+                    "id": 52,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -451,18 +541,45 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 38,
-                        "name": "claim",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 10,
-                        "src": "484:5:0",
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 47,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "591:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 49,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 48,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "598:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "591:18:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Claim_$8_storage",
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
                           "typeString": "struct Consumer.Claim storage ref"
                         }
                       },
-                      "id": 40,
+                      "id": 50,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -470,7 +587,7 @@
                       "memberName": "priceAmount",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 5,
-                      "src": "484:17:0",
+                      "src": "591:30:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -480,31 +597,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 41,
+                      "id": 51,
                       "name": "_priceAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 24,
-                      "src": "502:12:0",
+                      "referencedDeclaration": 28,
+                      "src": "622:12:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "484:30:0",
+                    "src": "591:43:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 43,
+                  "id": 53,
                   "nodeType": "ExpressionStatement",
-                  "src": "484:30:0"
+                  "src": "591:43:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 48,
+                    "id": 59,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -513,18 +630,45 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 44,
-                        "name": "claim",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 10,
-                        "src": "525:5:0",
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 54,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "645:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 56,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 55,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "652:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "645:18:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Claim_$8_storage",
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
                           "typeString": "struct Consumer.Claim storage ref"
                         }
                       },
-                      "id": 46,
+                      "id": 57,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -532,7 +676,7 @@
                       "memberName": "waitTime",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 7,
-                      "src": "525:14:0",
+                      "src": "645:27:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -542,39 +686,128 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 47,
+                      "id": 58,
                       "name": "_waitTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 26,
-                      "src": "540:9:0",
+                      "referencedDeclaration": 30,
+                      "src": "673:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "525:24:0",
+                    "src": "645:37:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 49,
+                  "id": 60,
                   "nodeType": "ExpressionStatement",
-                  "src": "525:24:0"
+                  "src": "645:37:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
+                    "id": 66,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 61,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "693:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 63,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 62,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "700:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "693:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
+                          "typeString": "struct Consumer.Claim storage ref"
+                        }
+                      },
+                      "id": 64,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "consumerAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 9,
+                      "src": "693:34:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 65,
+                      "name": "_consumerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 32,
+                      "src": "728:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "693:51:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 67,
+                  "nodeType": "ExpressionStatement",
+                  "src": "693:51:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 51,
-                        "name": "claimNo",
+                        "id": 69,
+                        "name": "claimCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 12,
-                        "src": "571:7:0",
+                        "referencedDeclaration": 16,
+                        "src": "771:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -588,18 +821,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 50,
+                      "id": 68,
                       "name": "ClaimEvent",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16,
-                      "src": "560:10:0",
+                      "referencedDeclaration": 20,
+                      "src": "760:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 52,
+                    "id": 70,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -607,20 +840,39 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "560:19:0",
+                    "src": "760:22:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 53,
-                  "nodeType": "ExpressionStatement",
-                  "src": "560:19:0"
+                  "id": 71,
+                  "nodeType": "EmitStatement",
+                  "src": "755:27:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 72,
+                    "name": "claimCount",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 16,
+                    "src": "800:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 36,
+                  "id": 73,
+                  "nodeType": "Return",
+                  "src": "793:17:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 55,
+            "id": 75,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -628,16 +880,16 @@
             "name": "createClaim",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 27,
+              "id": 33,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22,
+                  "id": 26,
                   "name": "_resourceLink",
                   "nodeType": "VariableDeclaration",
-                  "scope": 55,
-                  "src": "349:20:0",
+                  "scope": 75,
+                  "src": "396:20:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -645,10 +897,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 21,
+                    "id": 25,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "349:6:0",
+                    "src": "396:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -659,11 +911,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 24,
+                  "id": 28,
                   "name": "_priceAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 55,
-                  "src": "370:19:0",
+                  "scope": 75,
+                  "src": "417:19:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -671,10 +923,10 @@
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 23,
+                    "id": 27,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "370:6:0",
+                    "src": "417:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -685,11 +937,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 26,
+                  "id": 30,
                   "name": "_waitTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 55,
-                  "src": "391:17:0",
+                  "scope": 75,
+                  "src": "438:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -697,10 +949,70 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25,
+                    "id": 29,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "391:7:0",
+                    "src": "438:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "_consumerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "456:24:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "456:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "395:86:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 35,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "491:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "491:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -710,36 +1022,29 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "348:61:0"
+              "src": "490:9:0"
             },
-            "payable": false,
-            "returnParameters": {
-              "id": 28,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "409:0:0"
-            },
-            "scope": 56,
-            "src": "327:260:0",
+            "scope": 76,
+            "src": "374:444:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 57,
-        "src": "27:563:0"
+        "scope": 77,
+        "src": "27:794:0"
       }
     ],
-    "src": "0:590:0"
+    "src": "0:821:0"
   },
   "legacyAST": {
     "absolutePath": "/E/BlockChain/Hackathon/stopFakingIt/contracts/Consumer.sol",
     "exportedSymbols": {
       "Consumer": [
-        56
+        76
       ]
     },
-    "id": 57,
+    "id": 77,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -759,23 +1064,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 56,
+        "id": 76,
         "linearizedBaseContracts": [
-          56
+          76
         ],
         "name": "Consumer",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Consumer.Claim",
-            "id": 8,
+            "id": 10,
             "members": [
               {
                 "constant": false,
                 "id": 3,
                 "name": "resourceLink",
                 "nodeType": "VariableDeclaration",
-                "scope": 8,
+                "scope": 10,
                 "src": "76:19:0",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -801,7 +1106,7 @@
                 "id": 5,
                 "name": "priceAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 8,
+                "scope": 10,
                 "src": "106:18:0",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -827,7 +1132,7 @@
                 "id": 7,
                 "name": "waitTime",
                 "nodeType": "VariableDeclaration",
-                "scope": 8,
+                "scope": 10,
                 "src": "135:16:0",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -847,37 +1152,82 @@
                 },
                 "value": null,
                 "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9,
+                "name": "consumerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "162:23:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "162:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
               }
             ],
             "name": "Claim",
             "nodeType": "StructDefinition",
-            "scope": 56,
-            "src": "52:117:0",
+            "scope": 76,
+            "src": "52:141:0",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 10,
-            "name": "claim",
+            "id": 14,
+            "name": "claims",
             "nodeType": "VariableDeclaration",
-            "scope": 56,
-            "src": "175:18:0",
+            "scope": 76,
+            "src": "199:39:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_struct$_Claim_$8_storage",
-              "typeString": "struct Consumer.Claim"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+              "typeString": "mapping(uint256 => struct Consumer.Claim)"
             },
             "typeName": {
-              "contractScope": null,
-              "id": 9,
-              "name": "Claim",
-              "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 8,
-              "src": "175:5:0",
+              "id": 13,
+              "keyType": {
+                "id": 11,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "207:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "199:25:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_struct$_Claim_$8_storage_ptr",
-                "typeString": "struct Consumer.Claim"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                "typeString": "mapping(uint256 => struct Consumer.Claim)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 12,
+                "name": "Claim",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 10,
+                "src": "218:5:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Claim_$10_storage_ptr",
+                  "typeString": "struct Consumer.Claim"
+                }
               }
             },
             "value": null,
@@ -885,11 +1235,11 @@
           },
           {
             "constant": false,
-            "id": 12,
-            "name": "claimNo",
+            "id": 16,
+            "name": "claimCount",
             "nodeType": "VariableDeclaration",
-            "scope": 56,
-            "src": "200:22:0",
+            "scope": 76,
+            "src": "251:25:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -897,10 +1247,10 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 11,
+              "id": 15,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
-              "src": "200:7:0",
+              "src": "251:7:0",
               "typeDescriptions": {
                 "typeIdentifier": "t_uint256",
                 "typeString": "uint256"
@@ -912,21 +1262,21 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 16,
+            "id": 20,
             "name": "ClaimEvent",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 15,
+              "id": 19,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14,
+                  "id": 18,
                   "indexed": false,
                   "name": "_claimNo",
                   "nodeType": "VariableDeclaration",
-                  "scope": 16,
-                  "src": "252:16:0",
+                  "scope": 20,
+                  "src": "300:16:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -934,10 +1284,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 13,
+                    "id": 17,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "252:7:0",
+                    "src": "300:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -947,19 +1297,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "251:18:0"
+              "src": "299:18:0"
             },
-            "src": "235:35:0"
+            "src": "283:35:0"
           },
           {
             "body": {
-              "id": 19,
+              "id": 23,
               "nodeType": "Block",
-              "src": "297:18:0",
+              "src": "344:18:0",
               "statements": []
             },
             "documentation": null,
-            "id": 20,
+            "id": 24,
             "implemented": true,
             "isConstructor": true,
             "isDeclaredConst": false,
@@ -967,34 +1317,34 @@
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 17,
+              "id": 21,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "287:2:0"
+              "src": "335:2:0"
             },
             "payable": false,
             "returnParameters": {
-              "id": 18,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "297:0:0"
+              "src": "344:0:0"
             },
-            "scope": 56,
-            "src": "276:39:0",
+            "scope": 76,
+            "src": "324:38:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 54,
+              "id": 74,
               "nodeType": "Block",
-              "src": "409:178:0",
+              "src": "500:318:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 30,
+                    "id": 38,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1002,15 +1352,15 @@
                     "nodeType": "UnaryOperation",
                     "operator": "++",
                     "prefix": false,
-                    "src": "420:9:0",
+                    "src": "511:12:0",
                     "subExpression": {
                       "argumentTypes": null,
-                      "id": 29,
-                      "name": "claimNo",
+                      "id": 37,
+                      "name": "claimCount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 12,
-                      "src": "420:7:0",
+                      "referencedDeclaration": 16,
+                      "src": "511:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1021,14 +1371,14 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 31,
+                  "id": 39,
                   "nodeType": "ExpressionStatement",
-                  "src": "420:9:0"
+                  "src": "511:12:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 36,
+                    "id": 45,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1037,18 +1387,45 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 32,
-                        "name": "claim",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 10,
-                        "src": "440:5:0",
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 40,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "534:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 42,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 41,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "541:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "534:18:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Claim_$8_storage",
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
                           "typeString": "struct Consumer.Claim storage ref"
                         }
                       },
-                      "id": 34,
+                      "id": 43,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -1056,7 +1433,7 @@
                       "memberName": "resourceLink",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 3,
-                      "src": "440:18:0",
+                      "src": "534:31:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -1066,31 +1443,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 35,
+                      "id": 44,
                       "name": "_resourceLink",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 22,
-                      "src": "460:13:0",
+                      "referencedDeclaration": 26,
+                      "src": "567:13:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_memory_ptr",
                         "typeString": "string memory"
                       }
                     },
-                    "src": "440:33:0",
+                    "src": "534:46:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 37,
+                  "id": 46,
                   "nodeType": "ExpressionStatement",
-                  "src": "440:33:0"
+                  "src": "534:46:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 42,
+                    "id": 52,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1099,18 +1476,45 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 38,
-                        "name": "claim",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 10,
-                        "src": "484:5:0",
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 47,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "591:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 49,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 48,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "598:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "591:18:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Claim_$8_storage",
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
                           "typeString": "struct Consumer.Claim storage ref"
                         }
                       },
-                      "id": 40,
+                      "id": 50,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -1118,7 +1522,7 @@
                       "memberName": "priceAmount",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 5,
-                      "src": "484:17:0",
+                      "src": "591:30:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
@@ -1128,31 +1532,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 41,
+                      "id": 51,
                       "name": "_priceAmount",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 24,
-                      "src": "502:12:0",
+                      "referencedDeclaration": 28,
+                      "src": "622:12:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_int256",
                         "typeString": "int256"
                       }
                     },
-                    "src": "484:30:0",
+                    "src": "591:43:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
                     }
                   },
-                  "id": 43,
+                  "id": 53,
                   "nodeType": "ExpressionStatement",
-                  "src": "484:30:0"
+                  "src": "591:43:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 48,
+                    "id": 59,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1161,18 +1565,45 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 44,
-                        "name": "claim",
-                        "nodeType": "Identifier",
-                        "overloadedDeclarations": [],
-                        "referencedDeclaration": 10,
-                        "src": "525:5:0",
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 54,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "645:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 56,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 55,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "652:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "645:18:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_Claim_$8_storage",
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
                           "typeString": "struct Consumer.Claim storage ref"
                         }
                       },
-                      "id": 46,
+                      "id": 57,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -1180,7 +1611,7 @@
                       "memberName": "waitTime",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": 7,
-                      "src": "525:14:0",
+                      "src": "645:27:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -1190,39 +1621,128 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "id": 47,
+                      "id": 58,
                       "name": "_waitTime",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 26,
-                      "src": "540:9:0",
+                      "referencedDeclaration": 30,
+                      "src": "673:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
-                    "src": "525:24:0",
+                    "src": "645:37:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 49,
+                  "id": 60,
                   "nodeType": "ExpressionStatement",
-                  "src": "525:24:0"
+                  "src": "645:37:0"
                 },
                 {
                   "expression": {
                     "argumentTypes": null,
+                    "id": 66,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 61,
+                          "name": "claims",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14,
+                          "src": "693:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Claim_$10_storage_$",
+                            "typeString": "mapping(uint256 => struct Consumer.Claim storage ref)"
+                          }
+                        },
+                        "id": 63,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 62,
+                          "name": "claimCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "700:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "693:18:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Claim_$10_storage",
+                          "typeString": "struct Consumer.Claim storage ref"
+                        }
+                      },
+                      "id": 64,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "consumerAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 9,
+                      "src": "693:34:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 65,
+                      "name": "_consumerAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 32,
+                      "src": "728:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "693:51:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 67,
+                  "nodeType": "ExpressionStatement",
+                  "src": "693:51:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 51,
-                        "name": "claimNo",
+                        "id": 69,
+                        "name": "claimCount",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 12,
-                        "src": "571:7:0",
+                        "referencedDeclaration": 16,
+                        "src": "771:10:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -1236,18 +1756,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 50,
+                      "id": 68,
                       "name": "ClaimEvent",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16,
-                      "src": "560:10:0",
+                      "referencedDeclaration": 20,
+                      "src": "760:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
                         "typeString": "function (uint256)"
                       }
                     },
-                    "id": 52,
+                    "id": 70,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1255,20 +1775,39 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "560:19:0",
+                    "src": "760:22:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 53,
-                  "nodeType": "ExpressionStatement",
-                  "src": "560:19:0"
+                  "id": 71,
+                  "nodeType": "EmitStatement",
+                  "src": "755:27:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 72,
+                    "name": "claimCount",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 16,
+                    "src": "800:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 36,
+                  "id": 73,
+                  "nodeType": "Return",
+                  "src": "793:17:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 55,
+            "id": 75,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1276,16 +1815,16 @@
             "name": "createClaim",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 27,
+              "id": 33,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 22,
+                  "id": 26,
                   "name": "_resourceLink",
                   "nodeType": "VariableDeclaration",
-                  "scope": 55,
-                  "src": "349:20:0",
+                  "scope": 75,
+                  "src": "396:20:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1293,10 +1832,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 21,
+                    "id": 25,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "349:6:0",
+                    "src": "396:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1307,11 +1846,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 24,
+                  "id": 28,
                   "name": "_priceAmount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 55,
-                  "src": "370:19:0",
+                  "scope": 75,
+                  "src": "417:19:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1319,10 +1858,10 @@
                     "typeString": "int256"
                   },
                   "typeName": {
-                    "id": 23,
+                    "id": 27,
                     "name": "int256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "370:6:0",
+                    "src": "417:6:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int256",
                       "typeString": "int256"
@@ -1333,11 +1872,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 26,
+                  "id": 30,
                   "name": "_waitTime",
                   "nodeType": "VariableDeclaration",
-                  "scope": 55,
-                  "src": "391:17:0",
+                  "scope": 75,
+                  "src": "438:17:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1345,10 +1884,70 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 25,
+                    "id": 29,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "391:7:0",
+                    "src": "438:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "_consumerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "456:24:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "456:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "395:86:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 36,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 35,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 75,
+                  "src": "491:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 34,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "491:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1358,27 +1957,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "348:61:0"
+              "src": "490:9:0"
             },
-            "payable": false,
-            "returnParameters": {
-              "id": 28,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "409:0:0"
-            },
-            "scope": 56,
-            "src": "327:260:0",
+            "scope": 76,
+            "src": "374:444:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 57,
-        "src": "27:563:0"
+        "scope": 77,
+        "src": "27:794:0"
       }
     ],
-    "src": "0:590:0"
+    "src": "0:821:0"
   },
   "compiler": {
     "name": "solc",
@@ -1388,10 +1980,10 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x6367d9f399b46660a878392cfa4cf5b2caa7c3d3",
-      "transactionHash": "0x3c0dabf727353fa52a2f9c1cfed97cd7909d26199fa63c62bb51dd5f7e191a03"
+      "address": "0x5cddd03838ab651dbd52743c3402d6afee5d7dbb",
+      "transactionHash": "0x5ec67cd377cd06e9061450fff1c36d527f99c772d78a5ff8b5c565f52bce1a13"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-12T07:45:26.755Z"
+  "updatedAt": "2018-10-13T05:45:43.500Z"
 }
