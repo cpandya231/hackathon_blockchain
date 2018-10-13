@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="my-app">
+  <head>
+    <link rel="stylesheet" href="src/css/popup.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="src/js/lib/angular.min.js"></script>
+
+    <!-- App's Custom code -->
+    <script src="src/js/app/popup.js"></script>
+    <style>
+        .form-group {
+          margin-left: 20%;
+          margin-right: 20%;
+        }
+        .buttonBoth {
+          margin-left: 20%;
+          margin-right: 20%;
+        }
+        
+        .amount {margin-left: 37px;}
+        .duration {margin-left: 72px; }
+        
+        </style>
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-center"><img src="assets/icons/main.jpg"></img></div>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <hr/>
+            
+            <p id="claimMessage" class="text-center"></p>
+            <form >
+              <div class="form-group">
+               <div> 
+                 <label for="resourceUrl">Provide Link to resource:</label>
+                <input type="text" name="resourceUrl" id="resourceUrl"/>
+                </div>
+                <div>
+                  <br>
+                <label for="amount">Amout to be spend:</label>
+                <input type="text" class="amount" name="amount" id="amount"/>
+                </div>
+                <div>
+                    <br>
+                <label for="duration">Time(in days):</label>
+                <input type="text" class="duration" name="duration" id="duration"/>
+                </div>
+                <br>
+              </div>
+              <div class="buttonBoth">
+              <button type="submit" class="btn btn-primary">Identify Fakeness</button>
+              <button type="submit" class="btn btn-primary">View Claims</button>
+              </div>
+              <hr />
+            </form>
+            <p id="accountAddress" class="text-center"></p>
+            <p id="accountBalance" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
