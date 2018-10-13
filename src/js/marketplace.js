@@ -135,7 +135,8 @@ App = {
         instance.claims(i).then(function (res) {
           claim = res
           console.log("Resource Link " + claim[0] + " Amount to be spend " + claim[1] + " Wait time " + claim[2]);
-          var claimTemplate = "<tr><th><a href=" + claim[0] + ">" + claim[0] + "</a></th><td><button class='button-success pure-button researcher'>Researcher</button></td><td><button class='button-error pure-button verifier'>Verifier</button></td><td><button onclick=window.location.href='witnessed.html' class=button-warning pure-button witnessed>Witness</button></td></tr>"
+          var claimTemplate = "<tr><th><a href="+claim[0]+">" + claim[0] + "</th><td><button class='button-success pure-button researcher'>Researcher</button></td><td><button class='button-error pure-button verifier'>Verifier</button></td><td><button onclick=window.location.href='witnessed.html' class=button-warning pure-button witnessed>Witness</button></td></tr>"
+          //var claimTemplate = "<tr><th><a href=" + claim[0] + ">"+ claim[0] +"</th><td>"+claim[1]+"</td><td>"+claim[2]+"</td></tr>"
           claimInfo.append(claimTemplate);
         });
       }
