@@ -8,8 +8,11 @@ contract Consumer {
         address consumerAddress;
     }
     mapping(uint256 => Claim) public claims;
+    mapping(address => uint256[]) public consumerClaims;
     
     uint256 public claimCount;
+    
+    
     event ClaimEvent(uint256 _claimNo);
     constructor() public{
         
@@ -21,7 +24,16 @@ contract Consumer {
         claims[claimCount].priceAmount=_priceAmount;
         claims[claimCount].waitTime=_waitTime;
         claims[claimCount].consumerAddress=_consumerAddress;
+        consumerClaims[_consumerAddress].push(claimCount);
         emit ClaimEvent(claimCount);
-        return claimCount;
+        return claimCount;        
     }
+    
+    function findClaims(address _consumerAddress) view public returns (uint256[]){
+       
+        return consumerClaims[_consumerAddress];
+    }
+    
+    
+    
 }
