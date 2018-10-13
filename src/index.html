@@ -30,7 +30,8 @@
           <div id="content" style="display: none;">
             
             <hr/>
-            <form >
+            <p id="claimMessage" class="text-center"></p>
+            <form onSubmit="App.submitClaim(); return false;">
               <div class="form-group">
                 <label for="resourceUrl">Provide Link to resource</label>
                 <input type="text" name="resourceUrl" id="resourceUrl"/>
@@ -43,6 +44,7 @@
               <hr />
             </form>
             <p id="accountAddress" class="text-center"></p>
+            <p id="accountBalance" class="text-center"></p>
           </div>
         </div>
       </div>

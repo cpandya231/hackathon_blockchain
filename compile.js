@@ -14,10 +14,10 @@ const buildPath = path.resolve(__dirname, "build");
 fs.removeSync(buildPath);
 
 // It returns exhibition.sol path
-const contractPath = path.resolve(__dirname, "Contracts", "Consumer.sol");
+const contractPath = path.resolve(__dirname,"contracts", "Consumer.sol");
 
 // Get the content of exhibition.sol
-const exhibitionSource = fs.readFileSync(contractPath, "utf8");
+const exhibitionSource = fs.readFileSync(contractPath, "UTF-8");
 
 // This code compile the exhibition contract code and return the contracts object
 const output = solc.compile(exhibitionSource, 1).contracts;

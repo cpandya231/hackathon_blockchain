@@ -13,7 +13,7 @@ var mnemonic =
 
 // Infur rinkeby API url.
 // Specify ethereum network need to connect to
-var accessToken = "HTTP://127.0.0.1:7545";
+var accessToken = "https://ropsten.infura.io/v3/76c9640a129e45acaf1c977dd63aed89";
 
 // Create a wallet provider to connect outside rinkeby network
 const provider = new HDWalletProvider(mnemonic, accessToken, 1);
