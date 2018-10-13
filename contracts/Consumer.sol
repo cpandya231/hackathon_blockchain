@@ -21,6 +21,6 @@ contract Consumer {
         claim.priceAmount=_priceAmount;
         claim.waitTime=_waitTime;
         ClaimEvent(claimNo);
-        return claimNo;
+       
     }
 }
