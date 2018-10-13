@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html ng-app="my-app">
+  <head>
+    <link rel="stylesheet" href="src/css/popup.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="src/js/lib/angular.min.js"></script>
+
+    <!-- App's Custom code -->
+    
+    <style>
+        .button-success,
+        .button-error,
+        .button-warning,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-success {
+            background: rgb(28, 184, 65); /* this is a green */
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60); /* this is a maroon */
+        }
+
+        .button-warning {
+            background: rgb(223, 117, 20); /* this is an orange */
+        }
+
+        .button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+        }
+
+    </style>
+        
+        </style>
+        
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+            <button onclick="window.location.href='index.html'" class="btn btn-primary">Back</button>
+          <div class="text-center"><h2>Market Place</h2></div>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+              <div class="w3-container">
+                  <ul>
+                    <li>
+                    <div>
+                      <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                      <button class="button-success pure-button researcher">Researcher</button>
+                      <button class="button-error pure-button verifier">Verifier</button>
+                      <button onclick="window.location.href='witnessed.html'" class="button-warning pure-button witnessed">Witnessed</button>
+                    </div>
+                    </li>
+                    <br>
+                    <li>
+                      <div>
+                        <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                        <button class="button-success pure-button researcher">Researcher</button>
+                        <button class="button-error pure-button verifier">Verifier</button>
+                        <button class="button-warning pure-button witnessed">Witnessed</button>
+                      </div>
+                      </li>
+                      <br>
+                      <li>
+                          <div>
+                            <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                            <button class="button-success pure-button researcher">Researcher</button>
+                            <button class="button-error pure-button verifier">Verifier</button>
+                            <button class="button-warning pure-button witnessed">Witnessed</button>
+                          </div>
+                          </li>
+                          <br>
+                          <li>
+                            <div>
+                              <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                              <button class="button-success pure-button researcher">Researcher</button>
+                              <button class="button-error pure-button verifier">Verifier</button>
+                              <button class="button-warning pure-button witnessed">Witnessed</button>
+                            </div>
+                          </li>
+                          <br>
+                          <li>
+                              <div>
+                                <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                                <button class="button-success pure-button researcher">Researcher</button>
+                                <button class="button-error pure-button verifier">Verifier</button>
+                                <button class="button-warning pure-button witnessed">Witnessed</button>
+                              </div>
+                              </li>
+                              <br>
+                              <li>
+                                <div>
+                                  <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                                  <button class="button-success pure-button researcher">Researcher</button>
+                                  <button class="button-error pure-button verifier">Verifier</button>
+                                  <button class="button-warning pure-button witnessed">Witnessed</button>
+                                </div>
+                                </li>
+                                <br>
+                                <li>
+                                    <div>
+                                      <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                                      <button class="button-success pure-button">Researcher</button>
+                                      <button class="button-error pure-button">Verifier</button>
+                                      <button class="button-warning pure-button">Witnessed</button>
+                                    </div>
+                                    </li>
+                                    <br>
+                                    <li>
+                                      <div>
+                                        <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+                                        <button class="button-success pure-button">Researcher</button>
+                                        <button class="button-error pure-button">Verifier</button>
+                                        <button class="button-warning pure-button">Witnessed</button>
+                                      </div>
+                                    </li>
+                  </ul>
+                  </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
