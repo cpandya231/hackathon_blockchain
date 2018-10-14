@@ -135,24 +135,51 @@ App = {
         instance.claims(i).then(function (res) {
           claim = res
           console.log("Resource Link " + claim[0] + " Amount to be spend " + claim[1] + " Wait time " + claim[2]);
-          //var claimTemplate = "<tr><th><a href="+claim[0]+">" + claim[0] + "</th><td><button class='button-success pure-button researcher'>Researcher</button></td><td><button class='button-error pure-button verifier'>Verifier</button></td><td><button onclick=window.location.href='witnessed.html' class=button-warning pure-button witnessed>Witness</button></td></tr>"
-
+          var claimTemplate = "<tr><th><a href=" + claim[0] + ">" + claim[0] + "</th><td><button class='button-success pure-button researcher'>Researcher</button></td><td><button class='button-error pure-button verifier'>Verifier</button></td><td><button onclick=window.location.href='witnessed.html' class=button-warning pure-button witnessed>Witness</button></td></tr>"
           //var claimTemplate = "<tr><th><a href=" + claim[0] + ">"+ claim[0] +"</th><td>"+claim[1]+"</td><td>"+claim[2]+"</td></tr>"
-          instance.getTruth(1).then(function(truth){
-            console.log("The news is "+truth)
-            var ans;
-            if(truth){
-              ans="Real";
-            }else{
-              ans="Fake";
-            }
-            var claimTemplate = "<tr><th><a href="+claim[0]+">" + claim[0] + "</th><td><button class='button-success pure-button researcher'>Researcher</button></td><td><button class='button-error pure-button verifier'>Verifier</button></td><td><button onclick=window.location.href='witnessed.html' class=button-warning pure-button witnessed>Witness</button></td><td>"+ans+"</td></tr>"
-            claimInfo.append(claimTemplate);
-          });
-          
+          claimInfo.append(claimTemplate);
         });
       }
     });
+  },
+  voteAndCalculateTruthScore: function () {
+    var radio1;
+    var credibilityScore=$("#credibilityScore");
+    
+    if($('#radio1').is(':checked')){
+       radio1=1;
+    } else{
+      radio1=2;
+    }
+    var instance;
+    App.contracts.Consumer.deployed().then(function (i) {
+      instance = i;
+      instance.calculateTruthScore(radio1,0,0,1,App.account,{ from: App.account }).then(function(error, result)  {
+        console.log("Result from Truth Score"+result);
+      });
+      return instance.getTruth(1);
+    }).then(function(truth){
+      console.log("The News is  "+truth);
+      if(truth){
+        //$("#credibilityScore").html("The News is Real")
+      } else{
+        //$("#credibilityScore").html("The News is Fake")
+      }
+      
+      instance.witnesses(App.account).then(function(witness){
+        console.log("Witness truth Score "+witness[0]);
+        $("#credibilityScore").html("Your Credibility Score "+ witness[0]);
+      });
+    });
+
+
+    
+    
+    
+
+
+    console.log("Radio 1" + $('#radio1').is(':checked'));
+    console.log("Radio 2" + radio2);
   }
 
 
