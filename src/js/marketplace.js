@@ -4,7 +4,7 @@ App = {
   account: '0x0',
   hasVoted: false,
   balance: null,
-  returnClaims:[],
+  returnClaims: [],
 
   init: function () {
     return App.initWeb3();
@@ -64,6 +64,7 @@ App = {
       }
     });
 
+    App.findAllClaims();
 
 
 
@@ -104,29 +105,22 @@ App = {
 
     }).then(function (claims) {
       console.log(claims.length);
-      var claimView = $("#claimView");
-      var trContent = $("#trContent");
-      claimView.empty();
-      trContent.show();
       for (i = 0; i < claims.length; i++) {
         //console.log("Claim id "+claims[i].c);
         var claim;
-        instance.claims(claims[i].c).then(function(res){
-          claim=res;
-         
-          var claimTemplate = "<tr><th><a href=" + claim[0] + ">"+ claim[0] +"</th><td>"+claim[1]+"</td><td>"+claim[2]+"</td></tr>"
-          claimView.append(claimTemplate);
-          console.log("Resource Link "+claim[0]+" Amount to be spend "+ claim[1]+" Wait time "+claim[2]);
+        instance.claims(claims[i].c).then(function (res) {
+          claim = res
+          console.log("Resource Link " + claim[0] + " Amount to be spend " + claim[1] + " Wait time " + claim[2]);
         });
-        
+
         //returnClaims.push(claims[i].c);
       }
       console.log(returnClaims);
       //returnClaims.push(claims[4].c);
     });
-    
+
   },
-  findAllClaims: function(){
+  findAllClaims: function () {
     var claimInfo = $("#claimInfo");
     claimInfo.empty();
     returnClaims = [];
@@ -134,20 +128,33 @@ App = {
     App.contracts.Consumer.deployed().then(function (i) {
       instance = i;
       return instance.claimCount();
-    }).then(function(claimCount){
+    }).then(function (claimCount) {
       console.log(claimCount);
-      for(i=0;i<claimCount;i++){
+      for (i = 0; i < claimCount; i++) {
         var claim;
-        instance.claims(i).then(function(res){
-          claim=res
-          console.log("Resource Link "+claim[0]+" Amount to be spend "+ claim[1]+" Wait time "+claim[2]);
-          var claimTemplate = "<tr><th><a href=" + claim[0] + ">"+ claim[0] +"</th>"
-          claimInfo.append(candidateTemplate);
+        instance.claims(i).then(function (res) {
+          claim = res
+          console.log("Resource Link " + claim[0] + " Amount to be spend " + claim[1] + " Wait time " + claim[2]);
+          //var claimTemplate = "<tr><th><a href="+claim[0]+">" + claim[0] + "</th><td><button class='button-success pure-button researcher'>Researcher</button></td><td><button class='button-error pure-button verifier'>Verifier</button></td><td><button onclick=window.location.href='witnessed.html' class=button-warning pure-button witnessed>Witness</button></td></tr>"
+
+          //var claimTemplate = "<tr><th><a href=" + claim[0] + ">"+ claim[0] +"</th><td>"+claim[1]+"</td><td>"+claim[2]+"</td></tr>"
+          instance.getTruth(1).then(function(truth){
+            console.log("The news is "+truth)
+            var ans;
+            if(truth){
+              ans="Real";
+            }else{
+              ans="Fake";
+            }
+            var claimTemplate = "<tr><th><a href="+claim[0]+">" + claim[0] + "</th><td><button class='button-success pure-button researcher'>Researcher</button></td><td><button class='button-error pure-button verifier'>Verifier</button></td><td><button onclick=window.location.href='witnessed.html' class=button-warning pure-button witnessed>Witness</button></td><td>"+ans+"</td></tr>"
+            claimInfo.append(claimTemplate);
+          });
+          
         });
       }
     });
   }
- 
+
 
 };
 
