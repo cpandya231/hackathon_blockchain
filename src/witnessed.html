@@ -119,8 +119,8 @@
     }
 
     a {
-      background-color: red;
-      box-shadow: 0 5px 0 darkred;
+      
+      
       color: white;
       padding: 1em 1.5em;
       position: relative;
@@ -129,13 +129,28 @@
     }
 
     a:hover {
-      background-color: #ce0606;
+      
       cursor: pointer;
     }
 
     .linkClass a {
       display: block;
     }
+    .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.container {
+  margin-top: 3%;
+}
   </style>
 
 
@@ -149,12 +164,17 @@
   <!------ Include the above in your HEAD tag ---------->
 
   <div class="container">
+    <div>
+        <button onclick="window.location.href='marketplace.html'" class="btn btn-primary">Back</button>
+        <button onclick="window.location.href='index.html'" class="btn btn-primary">Home</button>
 
-    <div class="linkClass" ;>
+      </div>
 
-      <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+    <div class="linkClass">
+        
+      <a href="">Researcher's Work</a>
 
-      <a href="https://programs.upgrad.com">https://programs.upgrad.com</a>
+      <a href="">Verifier's Work</a>
     </div>
     <form onSubmit="App.voteAndCalculateTruthScore(); return false;">
       <div class="row">

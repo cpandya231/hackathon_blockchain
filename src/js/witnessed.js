@@ -173,13 +173,6 @@ App = {
     });
 
 
-    
-    
-    
-
-
-    console.log("Radio 1" + $('#radio1').is(':checked'));
-    console.log("Radio 2" + radio2);
   }
 
 
